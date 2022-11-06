@@ -87,7 +87,7 @@ export default function useGoogleLogin({
 
     const client = window.google?.accounts.oauth2[clientMethod]({
       client_id: clientId,
-      scope: `openid profile email ${scope}`,
+      scope: `${scope}`,
       callback: (response: TokenResponse | CodeResponse) => {
         if (response.error) return onErrorRef.current?.(response);
 
